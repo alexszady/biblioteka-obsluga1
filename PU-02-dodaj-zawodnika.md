@@ -6,46 +6,65 @@ Administrator / Trener
 
 ## Cel
 
-Dodanie nowego zawodnika do drużyny.
+Dodanie nowego zawodnika do systemu drużyny.
 
 ## Warunki wstępne
 
-- Administrator ma dostęp do systemu.
+- Administrator / Trener ma dostęp do systemu.
+- System jest uruchomiony.
 - Baza danych jest dostępna.
 
 ## Warunki końcowe
 
-Nowy zawodnik zostaje zapisany w bazie danych.
+Nowy zawodnik zostaje zapisany w bazie danych i pojawia się
+na liście zawodników.
 
-## Przebieg zdarzeń
+## Przebieg podstawowy
 
-1. Administrator otwiera formularz dodawania zawodnika.
-2. Administrator wprowadza imię i nazwisko.
-3. Administrator wprowadza numer.
-4. Administrator wybiera pozycję.
-5. Administrator wprowadza statystyki.
-6. System sprawdza poprawność danych.
-7. System zapisuje zawodnika w bazie danych.
-8. System wyświetla potwierdzenie.
+1. Administrator / Trener otwiera sekcję „Zawodnicy”.
+2. Wybiera opcję „Dodaj zawodnika”.
+3. System wyświetla formularz.
+4. Administrator / Trener wpisuje imię i nazwisko.
+5. Administrator / Trener podaje numer zawodnika.
+6. Administrator / Trener wybiera pozycję.
+7. Administrator / Trener wprowadza statystyki.
+8. Administrator / Trener zatwierdza formularz.
+9. System waliduje wprowadzone dane.
+10. System zapisuje zawodnika w bazie danych.
+11. System wyświetla komunikat potwierdzający dodanie zawodnika.
 
-## Dane zawodnika
+## Dane wejściowe
 
 - imię i nazwisko,
 - numer,
 - pozycja,
-- gole,
-- asysty,
-- występy.
+- liczba goli,
+- liczba asyst,
+- liczba występów.
 
-## Przypadek alternatywny
+## Przypadki alternatywne
 
 ### A1 – Niepoprawne dane
 
 1. System wykrywa niepoprawne dane.
 2. System wyświetla komunikat o błędzie.
-3. Administrator poprawia dane.
-4. System ponownie sprawdza dane.
+3. Administrator / Trener poprawia dane.
+4. System ponownie przeprowadza walidację.
+
+### A2 – Numer zawodnika jest już zajęty
+
+1. System sprawdza podany numer.
+2. System wykrywa, że numer jest już przypisany.
+3. System wyświetla odpowiedni komunikat.
+4. Administrator / Trener podaje inny numer.
+
+### A3 – Anulowanie operacji
+
+1. Administrator / Trener otwiera formularz.
+2. Wybiera opcję anulowania.
+3. System zamyka formularz.
+4. Zawodnik nie zostaje dodany.
 
 ## Rezultat
 
-Zawodnik zostaje dodany do drużyny.
+Nowy zawodnik zostaje zapisany w systemie.
