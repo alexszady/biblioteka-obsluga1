@@ -40,11 +40,11 @@ Czytelnik może wyszukiwać książki według:
 3. System waliduje dane wejściowe.
 4. System przeszukuje bazę danych katalogu.
 5. System zwraca listę pasujących pozycji.
-6. System wyświetla informacje:
+6. System wyświetla:
    - tytuł,
-   - autor,
-   - liczba dostępnych egzemplarzy,
-   - lokalizacja.
+   - autora,
+   - liczbę dostępnych egzemplarzy,
+   - lokalizację.
 7. Czytelnik przegląda wyniki.
 
 ## Przypadki alternatywne
@@ -71,3 +71,18 @@ Czytelnik może wyszukiwać książki według:
 
 Czytelnik otrzymuje listę książek odpowiadających podanym kryteriom
 wraz z informacją o liczbie dostępnych egzemplarzy i ich lokalizacji.
+
+## Tabela przypadku użycia
+
+| Element | Opis |
+|---|---|
+| ID | PU-01 |
+| Nazwa | Wyszukaj książkę |
+| Aktor główny | Czytelnik |
+| Cel | Odnalezienie książki w katalogu |
+| Warunki wstępne | Dostęp do systemu |
+| Logowanie | Niewymagane |
+| Dostępność | Publiczna |
+| Kanały dostępu | WWW / aplikacja / terminal |
+| Kryteria | Tytuł, autor |
+| Wynik | Lista pasujących książek |
