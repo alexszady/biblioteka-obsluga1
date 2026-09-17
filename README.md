@@ -1,132 +1,153 @@
-# 📚 System obsługi biblioteki
+# ⚽ System zarządzania drużyną piłkarską
 
 ## 1. Opis projektu
 
-System obsługi biblioteki jest systemem informatycznym wspierającym
-obsługę czytelników oraz pracę bibliotekarzy.
+System zarządzania drużyną piłkarską jest aplikacją umożliwiającą
+przechowywanie oraz prezentowanie informacji dotyczących zawodników
+i rozegranych oraz zaplanowanych spotkań.
 
-System umożliwia wyszukiwanie książek w katalogu, rezerwowanie,
-wypożyczanie i zwracanie książek.
+System pozwala na zarządzanie listą zawodników, ich numerami,
+pozycjami oraz statystykami.
 
-Bibliotekarz może dodatkowo zarządzać katalogiem oraz generować raporty.
+Umożliwia również zarządzanie terminarzem meczów oraz prezentowanie
+tabeli strzelców.
 
-## 2. Dostęp do systemu
+## 2. Cel projektu
 
-System może być dostępny poprzez:
+Celem projektu jest stworzenie prostego systemu pozwalającego
+na wygodne zarządzanie drużyną piłkarską oraz przechowywanie
+najważniejszych informacji dotyczących zawodników i spotkań.
 
-- stronę WWW,
-- aplikację,
-- terminal znajdujący się w bibliotece.
+Projekt może być wykorzystany jako aplikacja dla amatorskiej
+drużyny piłkarskiej, projekt edukacyjny lub baza do stworzenia
+bardziej rozbudowanego systemu zarządzania klubem.
 
-Wyszukiwanie książek jest dostępne publicznie i nie wymaga zalogowania.
+## 3. Główne funkcje
 
-## 3. Aktorzy
+System umożliwia:
 
-### Czytelnik
+- wyświetlanie listy zawodników,
+- dodawanie zawodników,
+- edytowanie danych zawodników,
+- usuwanie zawodników,
+- przypisywanie numerów zawodnikom,
+- przypisywanie pozycji zawodnikom,
+- przechowywanie liczby rozegranych meczów,
+- przechowywanie liczby zdobytych goli,
+- przechowywanie liczby asyst,
+- wyświetlanie terminarza,
+- dodawanie meczów,
+- edytowanie meczów,
+- usuwanie meczów,
+- wyświetlanie wyników spotkań,
+- wyświetlanie tabeli strzelców.
 
-Czytelnik korzysta z systemu w celu:
+## 4. Pozycje zawodników
 
-- wyszukiwania książek,
-- rezerwowania książek,
-- wypożyczania książek,
-- zwracania książek.
+System obsługuje następujące pozycje:
 
-### Bibliotekarz
+- Bramkarz
+- Obrońca
+- Pomocnik
+- Napastnik
 
-Bibliotekarz jest pracownikiem biblioteki i korzysta z systemu w celu:
+## 5. Statystyki zawodników
 
-- obsługi wypożyczeń,
-- obsługi zwrotów,
-- zarządzania katalogiem,
-- generowania raportów.
+Dla zawodnika przechowywane są:
 
-## 4. Przypadki użycia
+- liczba rozegranych meczów,
+- liczba zdobytych goli,
+- liczba asyst.
 
-System zawiera następujące przypadki użycia:
+## 6. Terminarz meczów
 
-1. Wyszukaj książkę
-2. Zarezerwuj książkę
-3. Wypożycz książkę
-4. Zwróć książkę
-5. Zarządzaj katalogiem
-6. Generuj raporty
+Dla meczu przechowywane są:
 
-## 5. Diagram przypadków użycia
+- przeciwnik,
+- data meczu,
+- godzina meczu,
+- miejsce rozegrania,
+- wynik spotkania.
+
+## 7. Tabela strzelców
+
+Tabela strzelców przedstawia zawodników uporządkowanych według
+liczby zdobytych goli.
+
+## 8. Aktorzy
+
+### Użytkownik
+
+Użytkownik może przeglądać informacje znajdujące się w systemie:
+
+- zawodników,
+- statystyki,
+- terminarz,
+- wyniki,
+- tabelę strzelców.
+
+### Administrator / Trener
+
+Administrator lub trener może zarządzać danymi:
+
+- dodawać zawodników,
+- edytować zawodników,
+- usuwać zawodników,
+- dodawać mecze,
+- edytować mecze,
+- usuwać mecze.
+
+## 9. Technologie
+
+Projekt wykorzystuje:
+
+- HTML5 – struktura aplikacji,
+- CSS3 – wygląd i responsywność,
+- JavaScript – logika aplikacji,
+- Node.js,
+- Express,
+- SQLite – przechowywanie danych.
+
+## 10. Diagram przypadków użycia
 
 ```mermaid
 flowchart LR
 
-    C[Czytelnik]
-    B[Bibliotekarz]
+    U[Użytkownik]
+    A[Administrator / Trener]
 
-    subgraph S[System obsługi biblioteki]
+    subgraph SYSTEM[System zarządzania drużyną piłkarską]
 
-        W((Wyszukaj książkę))
-        R((Zarezerwuj książkę))
-        WY((Wypożycz książkę))
-        Z((Zwróć książkę))
-        K((Zarządzaj katalogiem))
-        G((Generuj raporty))
+        P1((Wyświetl zawodników))
+        P2((Dodaj zawodnika))
+        P3((Edytuj zawodnika))
+        P4((Usuń zawodnika))
+        P5((Wyświetl statystyki))
+        P6((Wyświetl terminarz))
+        P7((Zarządzaj meczami))
+        P8((Wyświetl tabelę strzelców))
 
     end
 
-    C --- W
-    C --- R
-    C --- WY
-    C --- Z
+    U --- P1
+    U --- P5
+    U --- P6
+    U --- P8
 
-    B --- WY
-    B --- Z
-    B --- K
-    B --- G
+    A --- P1
+    A --- P2
+    A --- P3
+    A --- P4
+    A --- P5
+    A --- P6
+    A --- P7
+    A --- P8
 ```
 
-## 6. Dokumentacja przypadków użycia
-
-### PU-01 – Wyszukaj książkę
-
-Aktor główny: **Czytelnik**
-
-Cel: odnalezienie w katalogu książki spełniającej określone kryteria,
-np. tytuł lub autor.
-
-### PU-02 – Zarezerwuj książkę
-
-Aktor główny: **Czytelnik**
-
-Cel: umożliwienie czytelnikowi zarezerwowania wybranej książki.
-
-### PU-03 – Wypożycz książkę
-
-Aktor główny: **Czytelnik**
-
-Aktor wspierający: **Bibliotekarz**
-
-Cel: umożliwienie czytelnikowi wypożyczenia książki.
-
-### PU-04 – Zwróć książkę
-
-Aktor główny: **Czytelnik**
-
-Aktor wspierający: **Bibliotekarz**
-
-Cel: zarejestrowanie zwrotu wypożyczonej książki.
-
-### PU-05 – Zarządzaj katalogiem
-
-Aktor główny: **Bibliotekarz**
-
-Cel: zarządzanie informacjami o książkach znajdujących się w katalogu.
-
-### PU-06 – Generuj raporty
-
-Aktor główny: **Bibliotekarz**
-
-Cel: generowanie raportów dotyczących funkcjonowania biblioteki.
-
-## 7. Dokumentacja
+## 11. Dokumentacja
 
 - [Aktorzy](docs/aktorzy.md)
+- [Wymagania](docs/wymagania.md)
 - [Diagram przypadków użycia](docs/diagram-przypadkow-uzycia.md)
 - [Diagram aktywności](docs/diagram-aktywnosci.md)
 - [Diagram sekwencji](docs/diagram-sekwencji.md)
@@ -134,26 +155,10 @@ Cel: generowanie raportów dotyczących funkcjonowania biblioteki.
 
 ### Przypadki użycia
 
-- [PU-01 – Wyszukaj książkę](docs/przypadki-uzycia/PU-01-wyszukaj-ksiazke.md)
-- [PU-02 – Zarezerwuj książkę](docs/przypadki-uzycia/PU-02-zarezerwuj-ksiazke.md)
-- [PU-03 – Wypożycz książkę](docs/przypadki-uzycia/PU-03-wypozycz-ksiazke.md)
-- [PU-04 – Zwróć książkę](docs/przypadki-uzycia/PU-04-zwroc-ksiazke.md)
-- [PU-05 – Zarządzaj katalogiem](docs/przypadki-uzycia/PU-05-zarzadzaj-katalogiem.md)
-- [PU-06 – Generuj raporty](docs/przypadki-uzycia/PU-06-generuj-raporty.md)
-
-## 8. Technologie
-
-Projekt może zostać zrealizowany jako aplikacja internetowa.
-
-Przykładowe technologie:
-
-- HTML
-- CSS
-- JavaScript
-- baza danych SQL
-
-## 9. Cel projektu
-
-Celem projektu jest zaprojektowanie systemu informatycznego
-wspierającego obsługę biblioteki oraz ułatwiającego czytelnikom
-korzystanie z katalogu bibliotecznego.
+- [PU-01 – Wyświetl zawodników](docs/przypadki-uzycia/PU-01-wyswietl-zawodnikow.md)
+- [PU-02 – Dodaj zawodnika](docs/przypadki-uzycia/PU-02-dodaj-zawodnika.md)
+- [PU-03 – Edytuj zawodnika](docs/przypadki-uzycia/PU-03-edytuj-zawodnika.md)
+- [PU-04 – Usuń zawodnika](docs/przypadki-uzycia/PU-04-usun-zawodnika.md)
+- [PU-05 – Wyświetl statystyki](docs/przypadki-uzycia/PU-05-wyswietl-statystyki.md)
+- [PU-06 – Wyświetl terminarz](docs/przypadki-uzycia/PU-06-wyswietl-terminarz.md)
+- [PU-07 – Wyświetl tabelę strzelców](docs/przypadki-uzycia/PU-07-wyswietl-tabele-strzelcow.md)
