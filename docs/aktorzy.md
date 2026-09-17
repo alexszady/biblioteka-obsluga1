@@ -1,39 +1,41 @@
 # Aktorzy systemu
 
-## Czytelnik
+## 1. Użytkownik
 
-Czytelnik jest głównym użytkownikiem systemu.
+Użytkownik jest osobą korzystającą z systemu w celu przeglądania
+informacji dotyczących drużyny.
 
-Może:
-- wyszukiwać książki,
-- rezerwować książki,
-- wypożyczać książki,
-- zwracać książki.
+### Możliwe operacje
 
-Czytelnik nie musi być zalogowany, aby korzystać z wyszukiwarki
-książek.
+- wyświetlenie zawodników,
+- wyświetlenie statystyk,
+- wyświetlenie terminarza,
+- wyświetlenie wyników,
+- wyświetlenie tabeli strzelców.
 
-## Bibliotekarz
+## 2. Administrator / Trener
 
-Bibliotekarz jest pracownikiem biblioteki.
+Administrator lub trener jest osobą odpowiedzialną za zarządzanie
+danymi drużyny.
 
-Może:
-- zarządzać katalogiem,
-- dodawać książki,
-- usuwać książki,
-- modyfikować informacje o książkach,
-- obsługiwać wypożyczenia i zwroty,
-- generować raporty.
+### Możliwe operacje
+
+- dodanie zawodnika,
+- edycja zawodnika,
+- usunięcie zawodnika,
+- dodanie meczu,
+- edycja meczu,
+- usunięcie meczu.
 
 ## Zestawienie
 
 | Aktor | Funkcje |
 |---|---|
-| Czytelnik | Wyszukiwanie książek |
-| Czytelnik | Rezerwowanie książek |
-| Czytelnik | Wypożyczanie książek |
-| Czytelnik | Zwracanie książek |
-| Bibliotekarz | Wypożyczanie książek |
-| Bibliotekarz | Zwracanie książek |
-| Bibliotekarz | Zarządzanie katalogiem |
-| Bibliotekarz | Generowanie raportów |
+| Użytkownik | Wyświetlanie zawodników |
+| Użytkownik | Wyświetlanie statystyk |
+| Użytkownik | Wyświetlanie terminarza |
+| Użytkownik | Wyświetlanie tabeli strzelców |
+| Administrator / Trener | Dodawanie zawodników |
+| Administrator / Trener | Edytowanie zawodników |
+| Administrator / Trener | Usuwanie zawodników |
+| Administrator / Trener | Zarządzanie meczami |
