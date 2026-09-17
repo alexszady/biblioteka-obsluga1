@@ -10,27 +10,45 @@ Wyświetlenie statystyk zawodników drużyny.
 
 ## Warunki wstępne
 
+- Użytkownik ma dostęp do systemu.
 - System jest uruchomiony.
 - Baza danych jest dostępna.
 
 ## Warunki końcowe
 
-System wyświetla statystyki zawodników.
+System wyświetla aktualne statystyki zawodników.
 
-## Przebieg zdarzeń
+## Przebieg podstawowy
 
 1. Użytkownik otwiera aplikację.
-2. Użytkownik przechodzi do statystyk.
+2. Użytkownik przechodzi do sekcji „Statystyki”.
 3. System pobiera dane zawodników.
-4. System przetwarza statystyki.
-5. System wyświetla wyniki.
-6. Użytkownik przegląda statystyki.
+4. System przetwarza dane statystyczne.
+5. System wyświetla statystyki.
+6. Użytkownik przegląda statystyki zawodników.
 
-## Wyświetlane statystyki
+## Prezentowane dane
 
-- liczba występów,
-- liczba goli,
-- liczba asyst.
+System wyświetla:
+
+- imię i nazwisko zawodnika,
+- liczbę rozegranych meczów,
+- liczbę zdobytych goli,
+- liczbę asyst.
+
+## Przypadki alternatywne
+
+### A1 – Brak danych
+
+1. System pobiera dane.
+2. System nie znajduje danych statystycznych.
+3. System wyświetla informację o braku statystyk.
+
+### A2 – Błąd bazy danych
+
+1. System próbuje pobrać dane.
+2. Występuje błąd połączenia.
+3. System wyświetla komunikat o błędzie.
 
 ## Rezultat
 
