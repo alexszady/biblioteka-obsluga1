@@ -6,7 +6,8 @@ Użytkownik
 
 ## Cel
 
-Wyświetlenie listy zawodników drużyny wraz z podstawowymi informacjami.
+Wyświetlenie listy zawodników należących do drużyny wraz z
+podstawowymi informacjami o każdym zawodniku.
 
 ## Warunki wstępne
 
@@ -16,34 +17,44 @@ Wyświetlenie listy zawodników drużyny wraz z podstawowymi informacjami.
 
 ## Warunki końcowe
 
-System wyświetla listę zawodników.
+System wyświetla listę zawodników wraz z ich podstawowymi
+informacjami i statystykami.
 
-## Przebieg zdarzeń
+## Przebieg podstawowy
 
 1. Użytkownik otwiera aplikację.
-2. Użytkownik wybiera listę zawodników.
-3. System pobiera dane zawodników z bazy danych.
-4. System przetwarza dane.
+2. Użytkownik przechodzi do sekcji „Zawodnicy”.
+3. System pobiera listę zawodników z bazy danych.
+4. System przetwarza pobrane dane.
 5. System wyświetla listę zawodników.
-6. Użytkownik przegląda informacje.
+6. Użytkownik przegląda dane.
 
-## Informacje wyświetlane
+## Dane prezentowane użytkownikowi
+
+Dla każdego zawodnika system wyświetla:
 
 - imię i nazwisko,
-- numer,
-- pozycja,
-- liczba goli,
-- liczba asyst,
-- liczba występów.
+- numer zawodnika,
+- pozycję,
+- liczbę rozegranych meczów,
+- liczbę zdobytych goli,
+- liczbę asyst.
 
-## Przypadek alternatywny
+## Przypadki alternatywne
 
 ### A1 – Brak zawodników
 
-1. System sprawdza bazę danych.
-2. System nie znajduje zawodników.
-3. System wyświetla informację o braku zawodników.
+1. System pobiera dane z bazy.
+2. System nie znajduje żadnego zawodnika.
+3. System wyświetla komunikat informujący o braku zawodników.
+
+### A2 – Błąd połączenia z bazą danych
+
+1. System próbuje pobrać dane.
+2. Występuje błąd bazy danych.
+3. System wyświetla komunikat o błędzie.
+4. Dane nie zostają wyświetlone.
 
 ## Rezultat
 
-Użytkownik otrzymuje listę zawodników drużyny.
+Użytkownik może przeglądać aktualną listę zawodników drużyny.
